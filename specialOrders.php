@@ -95,24 +95,6 @@ $order->comments        = my_escape( $_POST['comments'] );
 $order_type             = $_POST['orderType'];
 
 /* set order status for email notifications */
-/*
-  if ( $_POST['orderType'] == "bike" ) {
-    $order->status = 2;
-    $bike_order = true;
-} else if ( $_POST['orderType'] == "PA" ) {
-        $order->status = 1;
-        $bike_order = false;
-} else if ( $_POST['orderType'] == "warranty" ) {
-        $order->status = 10;
-        $bike_order = false;
-        $warranty = true;
-} else if ( $_POST['orderType'] == "crash" ) {
-        $order->status = 10;
-        $bike_order = false;
-        $warranty = false;
-        $crash = true;
-}
-*/
 switch( $order_type )
 {
     case "bike":
