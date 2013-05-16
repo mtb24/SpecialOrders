@@ -383,17 +383,12 @@ function loadPAOrderFormEventHandler()
 	var cc = $(this).attr("id");
         switch (cc) {
 	    case "amex":
-		$("#cust_cc_num2").attr( {"size":"6","maxlength":"6"} );
-		$("#cust_cc_num3").attr( {"size":"5","maxlength":"5"} );
-		$("#cust_cc_num4").css( "display","none" );
-		$("#cust_cc_num1, #cust_cc_num2, #cust_cc_num3").css( "display","inline" );
+		$("#cust_cc_num").attr( {"size":"15","maxlength":"15"} );
 		break;
 	    case "visa":
 	    case "mastercard":
 	    case "discover":
-		$("#cust_cc_num2").attr( {"size":"4","maxlength":"4"} );
-		$("#cust_cc_num2").attr( {"size":"4","maxlength":"4"} );
-		$("#cust_cc_num1, #cust_cc_num2, #cust_cc_num3, #cust_cc_num4").css( "display","inline" );
+		$("#cust_cc_num").attr( {"size":"16","maxlength":"16"} );
 		break;
 	    default:
 		$("#cust_cc_num1, #cust_cc_num2, #cust_cc_num3, #cust_cc_num4").css( "display","none" );

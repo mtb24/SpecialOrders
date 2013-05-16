@@ -182,10 +182,7 @@ include_once("stores.inc.php");
 	<input id="giftcard" name="cust_cc_type" type="radio" value="Gift Card" class="" tabindex="1" /><img src="resources/images/MB_giftcard_60x38.png" width="60" height="38" alt="Mikes Bikes Gift Card" style="margin:0 10px 0 10px;" />&nbsp;&nbsp;&nbsp;&nbsp;
     <div>
 	<div id="card_details">
-	    Credit Card #&nbsp;<input id="cust_cc_num1" name="cust_cc_num1" type="text" size="4" maxlength="4" class="cc_numeric" onkeyup="doNext(this);" />&nbsp;&nbsp;&nbsp;
-	                       <input id="cust_cc_num2" name="cust_cc_num2" type="text" size="4" maxlength="4" class="cc_numeric" onkeyup="doNext(this);"/>&nbsp;&nbsp;&nbsp;
-			       <input id="cust_cc_num3" name="cust_cc_num3" type="text" size="4" maxlength="4" class="cc_numeric" onkeyup="doNext(this);"/>&nbsp;&nbsp;&nbsp;
-			       <input id="cust_cc_num4" name="cust_cc_num4" type="text" size="4" maxlength="4" class="cc_numeric" onkeyup="doNext(this);"/>&nbsp;&nbsp;&nbsp;
+	    Credit Card #&nbsp;<input id="cust_cc_num" name="cust_cc_num" type="text" size="16" maxlength="16" class="cc_numeric" onkeyup="doNext(this);" />
 	    Expiration (MM/YY)&nbsp;<input id="cust_cc_exp" name="cust_cc_exp" type="text" size="5" value="" maxlength="5" class="date_numeric" onkeyup="doNext(this);" />&nbsp;&nbsp;&nbsp;
 	    CVC #&nbsp;<input id="cust_cc_cvc" name="cust_cc_cvc" type="text" size="4" maxlength="4" class="numeric" />
 
