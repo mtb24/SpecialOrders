@@ -2,7 +2,6 @@
 include_once('configuration.php');
 include_once("stores.inc.php");
 ?>
-<p>HI!!!</p>
 <form id="PA_order_form">
     <input name="orderType" type="hidden" value="PA" />
 <div class="top_row">

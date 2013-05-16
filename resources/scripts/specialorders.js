@@ -9,92 +9,92 @@ $(document).ready(function ()
     loadAdminSettings();
 
     /* Parts & Accessories order page */
-    $('a#PAOrder').click(function ()
+    $("a#PAOrder").click(function ()
     {
-        $('DIV.title > H5').text('Parts & Accessories Order');
-        $('DIV.title').css('background', 'url("resources/images/colors/blue/title.png") repeat-x scroll 0 0 #336699');
-        $('.search').html('');
-        $('.table').load('PA-order-form.php');
+        $("DIV.title > H5").text("Parts & Accessories Order");
+        $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
+        $(".search").html("");
+        $(".table").load("PA-order-form.php");
         return false;
     });
     /* New Bike order page */
-    $('a.bikeOrder').click(function ()
+    $("a.bikeOrder").click(function ()
     {
-        $('DIV.title > H5').text('New Bike Order');
-        $('DIV.title').css('background', 'url("resources/images/colors/blue/title.png") repeat-x scroll 0 0 #336699');
-        $('.search').html('');
-        $('.table').load('bike-order-form.php');
+        $("DIV.title > H5").text("New Bike Order");
+        $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
+        $(".search").html("");
+        $(".table").load("bike-order-form.php");
         return false;
     });
 
     /* Warranty order page */
-    $('a#warranty').click(function ()
+    $("a#warranty").click(function ()
     {
-        $('DIV.title > H5').text('Warranty Order');
-        $('DIV.title').css('background', 'url("resources/images/colors/blue/title.png") repeat-x scroll 0 0 #336699');
-        $('.search').html('');
-        $('.table').load('warranty-order-form.php');
+        $("DIV.title > H5").text("Warranty Order");
+        $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
+        $(".search").html("");
+        $(".table").load("warranty-order-form.php");
         return false;
     });
 
     /* show search form when Search Orders link is clicked */
-    $('a#checkStatus').click(function ()
+    $("a#checkStatus").click(function ()
     {
-        $('div.error').hide(); /* hide validation errors if coming from form page */
-        $('DIV.title > H5').text('Search Orders');
-        $('DIV.title').css('background', 'url("resources/images/colors/blue/title.png") repeat-x scroll 0 0 #336699');
-        $('.search').html('');
-        $('.table').load('orderStatusSearch.php', loadOrderStatusSearchForm);
+        $("div.error").hide(); /* hide validation errors if coming from form page */
+        $("DIV.title > H5").text("Search Orders");
+        $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
+        $(".search").html("");
+        $(".table").load("orderStatusSearch.php", loadOrderStatusSearchForm);
         return false;
     });
 
     /* show Admin Panel when Admin link is clicked */
-    $('a#admin, a#showNewOrders').click(function ()
+    $("a#admin, a#showNewOrders").click(function ()
     {
-        $('div.error').hide(); /* hide validation errors if coming from form page */
-        $('DIV.title > H5').text('Special Orders Admin');
-        $('DIV.title').css('background', 'url("../images/colors/red/title.png") repeat-x scroll 0 0 rgb(155,1,1)');
-        $('.table').html(''); /* Here, needs to empty the page before loading the new one to avoid some misbehaviour of the datatable plugin */
-        $('.table').load('orderAdmin_hiddenRow.php', loadOrderAdmin);
-        $('.search').load('statusCodes.php?getFilteringSelectTag', loadStatusCodeSelectTag);
+        $("div.error").hide(); /* hide validation errors if coming from form page */
+        $("DIV.title > H5").text("Special Orders Admin");
+        $("DIV.title").css("background", "url('../images/colors/red/title.png') repeat-x scroll 0 0 rgb(155,1,1)");
+        $(".table").html(""); /* Here, needs to empty the page before loading the new one to avoid some misbehaviour of the datatable plugin */
+        $(".table").load("orderAdmin_hiddenRow.php", loadOrderAdmin);
+        $(".search").load("statusCodes.php?getFilteringSelectTag", loadStatusCodeSelectTag);
         return false;
     });
 
     /* Show only new bike orders */
-    $('a#new_bike_order').click(function ()
+    $("a#new_bike_order").click(function ()
     {
-        $('div.error').hide(); /* hide validation errors if coming from form page */
-        $('.table').html(''); /* Here, needs to empty the page before loading the new one to avoid some misbehaviour of the datatable plugin */
-        $('.table').load('orderAdmin_hiddenRow.php?sort_status=new_bike_order', loadOrderAdmin);
-        $('.search').load('statusCodes.php?getFilteringSelectTag', loadStatusCodeSelectTag);
+        $("div.error").hide(); /* hide validation errors if coming from form page */
+        $(".table").html(""); /* Here, needs to empty the page before loading the new one to avoid some misbehaviour of the datatable plugin */
+        $(".table").load("orderAdmin_hiddenRow.php?sort_status=new_bike_order", loadOrderAdmin);
+        $(".search").load("statusCodes.php?getFilteringSelectTag", loadStatusCodeSelectTag);
         return false;
     });
 
     /************  Settings Menu  ***************/
-    $('a.adminSettings').click(function ()
+    $("a.adminSettings").click(function ()
     {
-        $('div.error').hide(); /* hide validation errors if coming from form page */
-        $('.table').html('');
-        $('.table').load('adminSettings.php?action=' + $(this).attr('id'));
+        $("div.error").hide(); /* hide validation errors if coming from form page */
+        $(".table").html("");
+        $(".table").load("adminSettings.php?action=" + $(this).attr("id"));
         return false;
     });
 
     /* show the login dialog when Login is clicked */
-    $('a#admin-login').click(function ()
+    $("a#admin-login").click(function ()
     {
-        $('#dialog-login').dialog('open');
+        $("#dialog-login").dialog("open");
         return false;
     });
 
     /* show the change password dialog when Change Password is clicked */
-    $('#admin-change-password').click(function ()
+    $("#admin-change-password").click(function ()
     {
-        $('#dialog-change-password').dialog('open');
+        $("#dialog-change-password").dialog("open");
         return false;
     });
 
     /* Configure the dialog boxes */
-    $('#dialog-login').dialog(
+    $("#dialog-login").dialog(
     {
         autoOpen: false,
         height: 270,
@@ -103,33 +103,33 @@ $(document).ready(function ()
         buttons: {
             Login: function ()
             {
-                var dataForm = $('#dialog-login-form').serialize();
+                var dataForm = $("#dialog-login-form").serialize();
                 $.ajax(
                 {
-                    type: 'POST',
-                    url: 'login.php?login',
+                    type: "POST",
+                    url: "login.php?login",
                     data: dataForm,
                     success: function (response)
                     {
-                        window.location = 'index.php';
+                        window.location = "index.php";
                     }
                 });
-                $(this).dialog('close');
+                $(this).dialog("close");
             },
             Cancel: function ()
             {
-                $(this).dialog('close');
+                $(this).dialog("close");
             }
         },
         close: function ()
         {
-            $('#user-name').val('');
-            $('#user-password').val('');
+            $("#user-name").val("");
+            $("#user-password").val("");
         }
     });
 
 
-    $('#dialog-change-password').dialog(
+    $("#dialog-change-password").dialog(
     {
         autoOpen: false,
         height: 200,
@@ -138,31 +138,31 @@ $(document).ready(function ()
         buttons: {
             Save: function ()
             {
-                var dataForm = $('#dialog-change-password-form').serialize();
+                var dataForm = $("#dialog-change-password-form").serialize();
                 $.ajax(
                 {
-                    type: 'POST',
-                    url: 'login.php?change_pwd',
+                    type: "POST",
+                    url: "login.php?change_pwd",
                     data: dataForm,
                     success: function (response)
                     {
-                        window.location = 'index.php';
+                        window.location = "index.php";
                     }
                 });
-                $(this).dialog('close');
+                $(this).dialog("close");
             },
             Cancel: function ()
             {
-                $(this).dialog('close');
+                $(this).dialog("close");
             }
         },
         close: function ()
         {
-            $('#new-password').val('');
+            $("#new-password").val("");
         }
     });
 
-    $('#confirmModal').dialog(
+    $("#confirmModal").dialog(
     {
         autoOpen: false,
         height: 175,
@@ -173,27 +173,27 @@ $(document).ready(function ()
         buttons: {
             Yes: function ()
             {
-                $(this).dialog('close');
+                $(this).dialog("close");
                 callback(true);
             },
             No: function ()
             {
-                $(this).dialog('close');
+                $(this).dialog("close");
                 callback(false);
             }
         }
     });
 
     /* alert user to new changes */
-    $('#popUpModal').css(
+    $("#popUpModal").css(
     {
-        border: '10px solid red'
+        border: "10px solid red"
     });
-    $('#popUpModal').overlay(
+    $("#popUpModal").overlay(
     {
         top: 150,
         mask: {
-            color: '#99FF99',
+            color: "#99FF99",
             loadSpeed: 100,
             opacity: 0.95
         },
@@ -217,20 +217,20 @@ function loadBikeOrderFormEventHandler()
     $.validity.start();
     
     /* Toggle RA number field visibility
-     * highlight Rpro number field and show required 'Part Number 6' */
-    $('input[name="orderType"]').change(function ()
+     * highlight Rpro number field and show required "Part Number 6" */
+    $("input[name='orderType']").change(function ()
     {
-        if ($("input[name='orderType']:checked").val() == 'crash')
+        if ($("input[name='orderType']:checked").val() == "crash")
         {
-            $('#RAnumber').slideDown('fast').css('display', 'block');
-            //$('input.part6num').css('background-color', '#F08080');
-            //$('th.part6num').html("Rpro #<br /><br /><span class='part6num'>Part # 6 required</span>");
+            $("#RAnumber").slideDown("fast").css("display", "block");
+            //$("input.part6num").css("background-color", "#F08080");
+            //$("th.part6num").html("Rpro #<br /><br /><span class="part6num">Part # 6 required</span>");
         }
         else
         {
-	    $('#RAnumber').slideUp('slow').css('display', 'none');
-            //$('input.part6num').css('background-color', '');
-            //$('th.part6num').html('Rpro #');
+	    $("#RAnumber").slideUp("slow").css("display", "none");
+            //$("input.part6num").css("background-color", "");
+            //$("th.part6num").html("Rpro #");
         }
     });
 
@@ -239,20 +239,20 @@ function loadBikeOrderFormEventHandler()
     {
         e.preventDefault();
     	/* Validate form */
-    	$('#name_first, #name_last, #day_phone, #store, #employee').require();
+    	$("#name_first, #name_last, #day_phone, #store, #employee").require();
             var result = $.validity.end();
             if ( result.valid ) {
                 /* data valid, so continue */
                 $.ajax(
                 {
-                    type: 'POST',
-                    url: 'specialOrders.php',
-                    data: $('form#Bike_order_form').serialize()
+                    type: "POST",
+                    url: "specialOrders.php",
+                    data: $("form#Bike_order_form").serialize()
                 })
                 .done(function (response)
                     {
-                        $('#Bike_order_submit_button').css('background-color', '#33FF00').attr('value', 'Success!');
-                        $('#status').fadeIn('slow').html(response);
+                        $("#Bike_order_submit_button").css("background-color", "#33FF00").attr("value", "Success!");
+                        $("#status").fadeIn("slow").html(response);
                     }
                     )
                 .fail(function(){alert("Fail");});
@@ -268,169 +268,167 @@ function loadPAOrderFormEventHandler()
 {
 
     /* Allow only certain caracters in text fields */
-    /*  $('.alpha').alpha(); */
-    $('.alphanumeric_plus').alphanumeric(
+    /*  $(".alpha").alpha(); */
+    $(".alphanumeric_plus").alphanumeric(
     {
-        allow: '-.# '
+        allow: "-.# "
     });
-    $('#comments').alphanumeric(
+    $("#comments").alphanumeric(
     {
-        allow: '#.-!$%_ '
+        allow: "#.-!$%_ "
     });
-    $('.numeric').numeric();
-    $('.numeric_plus').numeric(
+    $(".numeric").numeric();
+    $(".numeric_plus").numeric(
     {
-        allow: '-.'
+        allow: "-."
     });
-    $('.cc_numeric').numeric(
+    $(".cc_numeric").numeric(
     {
-        allow: '-'
+        allow: "-"
     });
-    $('.date_numeric').numeric(
+    $(".date_numeric").numeric(
     {
-        allow: '-/'
+        allow: "-/"
     });
-    $('.email').alphanumeric(
+    $(".email").alphanumeric(
     {
-        allow: '.-_@'
+        allow: ".-_@"
     });
 
 
     /* Shipping Address same as Billing?  */
-    $('#same_as_billing').click(function ()
+    $(document).on("click", "#same_as_billing", function()
     {
-        $('#shipping_street').val($('#billing_street').val());
-        $('#shipping_city').val($('#billing_city').val());
-        $('#shipping_state').val($('#billing_state').val());
-        $('#shipping_zip').val($('#billing_zip').val());
+        $("#shipping_street").val($("#billing_street").val());
+        $("#shipping_city").val($("#billing_city").val());
+        $("#shipping_state").val($("#billing_state").val());
+        $("#shipping_zip").val($("#billing_zip").val());
     });
 
-    /* Toggle 'in store payment' method radio button */
-    $('input[name="new_bike_order"]').change(function ()
+    /* Toggle "in store payment" method radio button */
+    /*
+    $("input[name="new_bike_order"]").change(function ()
     {
-        if ($("input[name='new_bike_order']:checked"))
+        if ($("input[name="new_bike_order"]:checked"))
         {
-            $('#in_store_purchase').attr('disabled', false);
-            $('div#card_details').css('display', 'none');
-            $('div#receipt > span').text('Receipt #');
-            $('div#receipt').slideDown('fast').css('display', 'block');
+            $("#in_store_purchase").attr("disabled", false);
+            $("div#card_details").css("display", "none");
+            $("div#receipt > span").text("Receipt #");
+            $("div#receipt").slideDown("fast").css("display", "block");
         }
         else
         {
-            $('#in_store_purchase').prop('disabled', true).attr('checked', false);
-            $('div#receipt').slideUp('slow').css('display', 'none');
+            $("#in_store_purchase").prop("disabled", true).attr("checked", false);
+            $("div#receipt").slideUp("slow").css("display", "none");
         }
 
     });
+    */
 
-    /*  Calculate item totals when item fields change */
-    $('#store').change(function ()
-    { // changes tax amount and recalculates
-        recalculateTotalAmount();
-    });
-    $('.item1').change(function ()
+    /*  Calculate item totals when item fields or store changes */
+    $(document).on("change", "#store, .item1, .item2, .item3, .item4, .item5", function()
     {
-        var subTotal = isNanMe(parseFloat($('#item_1_price').val())) * isNanMe(parseFloat($('#item_1_qty').val()));
-        $('#item_1_total').val(roundMe(subTotal, 2));
+        var subTotal1 = isNanMe(parseFloat($("#item_1_price").val())) * isNanMe(parseFloat($("#item_1_qty").val()));
+        $("#item_1_total").val(roundMe(subTotal1, 2));
+	
+        var subTotal2 = isNanMe(parseFloat($("#item_2_price").val())) * isNanMe(parseFloat($("#item_2_qty").val()));
+        $("#item_2_total").val(roundMe(subTotal2, 2));
+	
+        var subTotal3 = isNanMe(parseFloat($("#item_3_price").val())) * isNanMe(parseFloat($("#item_3_qty").val()));
+        $("#item_3_total").val(roundMe(subTotal3, 2));
+	
+        var subTotal4 = isNanMe(parseFloat($("#item_4_price").val())) * isNanMe(parseFloat($("#item_4_qty").val()));
+        $("#item_4_total").val(roundMe(subTotal4, 2));
+	
+        var subTotal5 = isNanMe(parseFloat($("#item_5_price").val())) * isNanMe(parseFloat($("#item_5_qty").val()));
+        $("#item_5_total").val(roundMe(subTotal5, 2));
+	
+	// change tax amount and recalculate
         recalculateTotalAmount();
     });
-    $('.item2').change(function ()
-    {
-        var subTotal = isNanMe(parseFloat($('#item_2_price').val())) * isNanMe(parseFloat($('#item_2_qty').val()));
-        $('#item_2_total').val(roundMe(subTotal, 2));
-        recalculateTotalAmount();
-    });
-    $('.item3').change(function ()
-    {
-        var subTotal = isNanMe(parseFloat($('#item_3_price').val())) * isNanMe(parseFloat($('#item_3_qty').val()));
-        $('#item_3_total').val(roundMe(subTotal, 2));
-        recalculateTotalAmount();
-    });
-    $('.item4').change(function ()
-    {
-        var subTotal = isNanMe(parseFloat($('#item_4_price').val())) * isNanMe(parseFloat($('#item_4_qty').val()));
-        $('#item_4_total').val(roundMe(subTotal, 2));
-        recalculateTotalAmount();
-    });
-    $('.item5').change(function ()
-    {
-        var subTotal = isNanMe(parseFloat($('#item_5_price').val())) * isNanMe(parseFloat($('#item_5_qty').val()));
-        $('#item_5_total').val(roundMe(subTotal, 2));
-        recalculateTotalAmount();
-    });
+    
     /* Shipping Method */
-    $('select[name=ship_method]').change(function ()
-    {
-        $('#shipping_charge').val($(this).val());
+    $(document).on("change", "select[name='ship_method']", function (){
+	
+        var method = $("select[name=\"ship_method\"] option:selected").attr("id");
+	$("#shipping_charge").val( $(this).val() );
         recalculateTotalAmount();
 	
-	/* show Work Order field if "Repair Bike" selected */
-	if( $('select[name=ship_method] option:selected').attr('id') == 'repair' )
+	if( method === "repair" )
 	{
-	    $('input[name=cust_cc_type]').prop('disabled', true).attr('checked', false);
-	    $('div#receipt > span').text('Work Order #');
-	    $('div#receipt').slideDown('fast').css('display', 'block');
+	    /* show Work Order field if "Repair Bike" selected */
+	    $("div#card_details").slideUp("fast").css("display", "none");
+	    $("input[name='cust_cc_type']").prop("disabled", true).attr("checked", false);
+	    $("div#receipt > span").text("Work Order #");
+	    $("div#receipt").slideDown("fast").css("display", "block");
+	}
+	else if ( method === "store_pickup" || "orderlessthan100" || "order100to200" || "orderover200" ) {
+	    /* Re-enable CC fields if something other than "Repair Bike" selected */
+	    $("input[name='cust_cc_type']").prop("disabled", false).attr("checked", false);
+	    $("div#receipt").slideUp("fast").css("display", "none");
 	}
     });
 
     /* Avoid direct changes from users */
-    $('#shipping_charge').change(function ()
+    $("#shipping_charge").change(function()
     {
-        /* $('#shipping_charge').val( $('input[name=ship_method]:checked').val() ); */
+        /* $("#shipping_charge").val( $("input[name=ship_method]:checked").val() ); */
         recalculateTotalAmount();
     });
 
     /* show/hide credit card details */
-    $('#visa, #mastercard, #amex, #discover').click(function ()
+    $(document).on("click", "#visa, #mastercard, #amex, #discover", function()
     {
-        var cc = $(this);
-        if (cc.value === 'amex')
-        {
-            $('#cust_cc_num4').attr(
-            {
-                'maxlength': '3',
-                'size': '3'
-            });
-        }
-        $('div#receipt').slideUp('fast').css('display', 'none');
         // change field lengths per card type
-        $('div#card_details').slideDown('fast').css('display', 'block');
-    });
-    $('#in_store_purchase').click(function ()
-    {
-        $('#cust_cc_num, #cust_cc_exp, #cust_cc_cvc').val('');
-        $('div#receipt > span').text('Receipt #');
-        $('div#receipt').css('left', '600px');
-        $('div#card_details').slideUp('fast').css('display', 'none');
-        $('div#receipt').slideDown('fast').css('display', 'block');
+	var cc = $(this).attr("id");
+        switch (cc) {
+	    case "amex":
+		$("#cust_cc_num2").attr( {"size":"6","maxlength":"6"} );
+		$("#cust_cc_num3").attr( {"size":"5","maxlength":"5"} );
+		$("#cust_cc_num4").css( "display","none" );
+		$("#cust_cc_num1, #cust_cc_num2, #cust_cc_num3").css( "display","inline" );
+		break;
+	    case "visa":
+	    case "mastercard":
+	    case "discover":
+		$("#cust_cc_num2").attr( {"size":"4","maxlength":"4"} );
+		$("#cust_cc_num2").attr( {"size":"4","maxlength":"4"} );
+		$("#cust_cc_num1, #cust_cc_num2, #cust_cc_num3, #cust_cc_num4").css( "display","inline" );
+		break;
+	    default:
+		$("#cust_cc_num1, #cust_cc_num2, #cust_cc_num3, #cust_cc_num4").css( "display","none" );
+	}
+
+        $("div#receipt").slideUp("fast").css("display", "none");
+        $("div#card_details").slideDown("fast").css("display", "block");
     });
 
     /* show receipt field when giftcard is selected */
-    $('#giftcard').click(function ()
+    $(document).on("click", "#giftcard", function()
     {
-        $('div#card_details').slideUp('fast').css('display', 'none');
-        $('div#receipt > span').text('Gift Card #');
-        $('div#receipt').css('left', '400px');
-        $('div#receipt').slideDown('fast').css('display', 'block');
+        $("div#card_details").slideUp("fast").css("display", "none");
+        $("div#receipt > span").text("Gift Card #");
+        $("div#receipt").css("left", "400px");
+        $("div#receipt").slideDown("fast").css("display", "block");
     });
 
     /* Form Validations */
     function FormInputsValid()
     {
         $.validity.start();
-        $('#name_first, #name_last, #store, #employee').require();
-        $('#day_phone').require().match('phone');
-        $('#billing_street,#billing_city,#billing_state,#billing_zip').require();
-        var cardType = $('input[name=cust_cc_type]:checked').val();
-        if (cardType === ('visa' || 'mastercard' || 'amex' || 'discover'))
+        $("#name_first, #name_last, #store, #employee").require();
+        $("#day_phone").require().match("phone");
+        $("#billing_street,#billing_city,#billing_state,#billing_zip").require();
+        var cardType = $("input[name=cust_cc_type]:checked").val();
+        if (cardType === ("visa" || "mastercard" || "amex" || "discover"))
         {
-            $('#cust_cc_num1,#cust_cc_num2,#cust_cc_num3,#cust_cc_num1').require().match('integer');
-            $('#cust_cc_exp').require().match(/^\d{2}[\/]\d{2}$/, 'Expiration Date must be in the form xx/xx').maxLength(5);
-            $('#cust_cc_cvc').require().match('integer').maxLength(4);
+            $("#cust_cc_num1,#cust_cc_num2,#cust_cc_num3,#cust_cc_num1").require().match("integer");
+            $("#cust_cc_exp").require().match(/^\d{2}[\/]\d{2}$/, "Expiration Date must be in the form xx/xx").maxLength(5);
+            $("#cust_cc_cvc").require().match("integer").maxLength(4);
         }
-        else if (cardType == ('Gift Card' || 'In store purchase'))
+        else if (cardType == ("Gift Card" || "In store purchase"))
         {
-            $('#receipt_number').require();
+            $("#receipt_number").require();
         }
 
         var result = $.validity.end();
@@ -445,24 +443,24 @@ function loadPAOrderFormEventHandler()
         if (FormInputsValid())
         {
             /* disable submit button */
-            $('#PA_order_submit_button').prop('disabled', true);
+            $("#PA_order_submit_button").prop("disabled", true);
 
             $.ajax(
             {
-                type: 'POST',
-                url: 'specialOrders.php',
-                data: $('#PA_order_form').serialize()
+                type: "POST",
+                url: "specialOrders.php",
+                data: $("#PA_order_form").serialize()
             })
             .done(function (response)
             {
-                $('#PA_order_submit_button').css('background-color', '#33FF00').attr('value', 'Success!');
-                $('#status').fadeIn('slow').html(response);
+                $("#PA_order_submit_button").css("background-color", "#33FF00").attr("value", "Success!");
+                $("#status").fadeIn("slow").html(response);
             })
             .fail(function(){alert("fail");});
         }
         else
         {
-            alert('Make sure required fields are completed!');
+            alert("Make sure required fields are completed!");
         }
     });
 } // end loadPAOrderFormEventHandler()
@@ -474,12 +472,12 @@ function loadPAOrderFormEventHandler()
 function loadWarrantyFormEventHandler()
 {
 
-    $('a.newbikeOrder').click(function ()
+    $("a.newbikeOrder").click(function ()
     {
-        $('DIV.title > H5').text('New Bike Order');
-        $('DIV.title').css('background', 'url("resources/images/colors/blue/title.png") repeat-x scroll 0 0 #336699');
-        $('.search').html('');
-        $('.table').load('bike-order-form.php');
+        $("DIV.title > H5").text("New Bike Order");
+        $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
+        $(".search").html("");
+        $(".table").load("bike-order-form.php");
         return false;
     });
 
@@ -487,8 +485,8 @@ function loadWarrantyFormEventHandler()
     function WarrantyFormInputsValid()
     {
         $.validity.start();
-        $('#name_first, #name_last, #store, #employee').require();
-        $('#day_phone').require().match('phone');
+        $("#name_first, #name_last, #store, #employee").require();
+        $("#day_phone").require().match("phone");
         var result = $.validity.end();
         return result.valid;
     }
@@ -501,23 +499,23 @@ function loadWarrantyFormEventHandler()
         if (WarrantyFormInputsValid())
         {
             /* disable submit button */
-            $('#warranty_order_submit_button').prop({disabled: true});
+            $("#warranty_order_submit_button").prop({disabled: true});
             $.ajax(
             {
-                type: 'POST',
-                url: 'specialOrders.php',
-                data: $('#warranty_order_form').serialize()
+                type: "POST",
+                url: "specialOrders.php",
+                data: $("#warranty_order_form").serialize()
             })
             .done(function (response)
             {
-                $('#warranty_order_submit_button').css("background-color","#33FF00").attr('value', 'Success!');
-                $('#status').fadeIn('slow').html(response);
+                $("#warranty_order_submit_button").css("background-color","#33FF00").attr("value", "Success!");
+                $("#status").fadeIn("slow").html(response);
             })
             .fail(function(){alert("fail");});
         }
         else
         {
-            alert('Make sure required fields are completed!');
+            alert("Make sure required fields are completed!");
         }
     });
 } // end loadWarrantyFormEventHandler()
@@ -529,19 +527,19 @@ function loadWarrantyFormEventHandler()
  ********************************************************/
 function loadOrderStatusSearchForm()
 {
-    $('#search_order_input_box').autocomplete(
+    $("#search_order_input_box").autocomplete(
     {
         minLength: 1,
         delay: 0,
         source: function (request, response)
         {
-            if ($('#search_order_store').val() != 'null')
+            if ($("#search_order_store").val() != "null")
             {
-                request.store = $('#search_order_store').val();
+                request.store = $("#search_order_store").val();
             }
 
             $.getJSON(
-		      'orderStatus.php',
+		      "orderStatus.php",
 		      request,
 		      function (data)
 		      {
@@ -554,97 +552,97 @@ function loadOrderStatusSearchForm()
             if (ui.item)
             {
                 var numOfOrders = (1 + ui.item.others.length);
-                var suffix = (numOfOrders > 1) ? 's' : '';
-                var dateOrdered = (ui.item.date_ordered == '0000-00-00') ? 'Not yet ordered' : ui.item.date_ordered;
-                sOut = '<center><div id=\"numOrdersFound\" class=\"message-success\"><span>' + numOfOrders + '</span> Order' + suffix + ' Found</div></center>';
-                sOut += '<table class=\"statusResultTable success\" border=\"1\" cellpadding=\"5\">';
-                sOut += '<tr class=\"searchTableHeader\"><th>&nbsp;</th><th>OrderID</th><th>Status</th><th>Submitted</th><th>Notes</th><th>Ordered</th></tr>';
-                sOut += '<tr id=\"' + ui.item.order_id + '\"><td class=\"row_icon\"><img id=\"' + ui.item.order_id + '\" class=\"row_icon\" src=\"resources/images/details_open.png\" /></td><td width=\"4%\">' + ui.item.order_id + '</td><td width=\"4%\">' + ui.item.status + '</td>';
-                sOut += '<td width=\"13%\">' + ui.item.date_submitted + '</td><td width=\"66%\">' + ui.item.notes + '</td>';
-                sOut += '<td width=\"13%\">' + dateOrdered + '</td></tr>';
-                sOut += '<tr class=\"details\" id=\"details_' + ui.item.order_id + '\"><td colspan=\"5\"></td></tr>';
+                var suffix = (numOfOrders > 1) ? "s" : "";
+                var dateOrdered = (ui.item.date_ordered == "0000-00-00") ? "Not yet ordered" : ui.item.date_ordered;
+                sOut = "<center><div id=\"numOrdersFound\" class=\"message-success\"><span>" + numOfOrders + "</span> Order" + suffix + " Found</div></center>";
+                sOut += "<table class=\"statusResultTable success\" border=\"1\" cellpadding=\"5\">";
+                sOut += "<tr class=\"searchTableHeader\"><th>&nbsp;</th><th>OrderID</th><th>Status</th><th>Submitted</th><th>Notes</th><th>Ordered</th></tr>";
+                sOut += "<tr id=\"" + ui.item.order_id + "\"><td class=\"row_icon\"><img id=\"" + ui.item.order_id + "\" class=\"row_icon\" src=\"resources/images/details_open.png\" /></td><td width=\"4%\">" + ui.item.order_id + "</td><td width=\"4%\">" + ui.item.status + "</td>";
+                sOut += "<td width=\"13%\">" + ui.item.date_submitted + "</td><td width=\"66%\">" + ui.item.notes + "</td>";
+                sOut += "<td width=\"13%\">" + dateOrdered + "</td></tr>";
+                sOut += "<tr class=\"details\" id=\"details_" + ui.item.order_id + "\"><td colspan=\"5\"></td></tr>";
                 fetchDetails(ui.item.order_id);
 
                 for (var x = 0; x < ui.item.others.length; x++)
                 {
-                    dateOrdered = (ui.item.others[x].date_ordered == '0000-00-00') ? 'Not yet ordered' : ui.item.others[x].date_ordered;
-                    sOut += '<tr id=\"' + ui.item.others[x].order_id + '\"><td class=\"row_icon\"><img id=\"' + ui.item.others[x].order_id + '\" class=\"row_icon\" src=\"resources/images/details_open.png\" /></td><td width=\"4%\">' + ui.item.others[x].order_id + '</td><td width=\"4%\">' + ui.item.others[x].status + '</td>';
-                    sOut += '<td width=\"13%\">' + ui.item.others[x].date_submitted + '</td><td width=\"66%\">' + ui.item.others[x].notes + '</td>';
-                    sOut += '<td width=\"13%\">' + dateOrdered + '</td></tr>';
-                    sOut += '<tr class=\"details\" id=\"details_' + ui.item.others[x].order_id + '\"><td colspan=\"5\"></td></tr>';
+                    dateOrdered = (ui.item.others[x].date_ordered == "0000-00-00") ? "Not yet ordered" : ui.item.others[x].date_ordered;
+                    sOut += "<tr id=\"" + ui.item.others[x].order_id + "\"><td class=\"row_icon\"><img id=\"" + ui.item.others[x].order_id + "\" class=\"row_icon\" src=\"resources/images/details_open.png\" /></td><td width=\"4%\">" + ui.item.others[x].order_id + "</td><td width=\"4%\">" + ui.item.others[x].status + "</td>";
+                    sOut += "<td width=\"13%\">" + ui.item.others[x].date_submitted + "</td><td width=\"66%\">" + ui.item.others[x].notes + "</td>";
+                    sOut += "<td width=\"13%\">" + dateOrdered + "</td></tr>";
+                    sOut += "<tr class=\"details\" id=\"details_" + ui.item.others[x].order_id + "\"><td colspan=\"5\"></td></tr>";
                     fetchDetails(ui.item.others[x].order_id);
                 }
-                sOut += '</table>';
-                $('#search_results').html(sOut);
+                sOut += "</table>";
+                $("#search_results").html(sOut);
 
-                $('img.row_icon').click(function ()
+                $("img.row_icon").click(function ()
                 {
-                    var id = $(this).attr('id');
-                    if (this.src.match('details_close'))
+                    var id = $(this).attr("id");
+                    if (this.src.match("details_close"))
                     {
                         /* This row is already open - close it */
-                        this.src = 'resources/images/details_open.png';
-                        $('tr#details_' + id).css('display', 'none');
+                        this.src = "resources/images/details_open.png";
+                        $("tr#details_" + id).css("display", "none");
                     }
                     else
                     {
                         /* Open this row */
-                        this.src = 'resources/images/details_close.png';
-                        $('tr#details_' + id).css('display', 'table-row');
+                        this.src = "resources/images/details_close.png";
+                        $("tr#details_" + id).css("display", "table-row");
                     }
                 });
             }
         }
     });
-    $('#openOrderSearch').change(function ()
+    $("#openOrderSearch").change(function ()
     {
-        $('#search_results').html('');
-        $.getJSON('orderSearchbyStore.php',
+        $("#search_results").html("");
+        $.getJSON("orderSearchbyStore.php",
         {
-            store: $('#openOrderSearch').val()
+            store: $("#openOrderSearch").val()
         },
 
         function (data)
         {
             var numOfOrders = (1 + data.length);
-            var suffix = (numOfOrders > 1) ? 's' : '';
-            sOut = '<center><div id=\"numOrdersFound\" class=\"message-success\"><span>' + numOfOrders + '</span> Open Order' + suffix + ' Found for ' + $('#openOrderSearch').val() + '</div></center>';
-            sOut += '<table class=\"statusResultTable success\" border=\"1\" cellpadding=\"5\">';
-            sOut += '<tr class=\"searchTableHeader\"><th>&nbsp;</th><th>OrderID</th><th>Status</th><th>Submitted</th><th>Notes</th><th>Ordered</th></tr>';
+            var suffix = (numOfOrders > 1) ? "s" : "";
+            sOut = "<center><div id=\"numOrdersFound\" class=\"message-success\"><span>" + numOfOrders + "</span> Open Order" + suffix + " Found for " + $("#openOrderSearch").val() + "</div></center>";
+            sOut += "<table class=\"statusResultTable success\" border=\"1\" cellpadding=\"5\">";
+            sOut += "<tr class=\"searchTableHeader\"><th>&nbsp;</th><th>OrderID</th><th>Status</th><th>Submitted</th><th>Notes</th><th>Ordered</th></tr>";
             for (var x = 0; x < data.length; x++)
             {
-                var dateOrdered = (data[x].date_ordered == '0000-00-00') ? 'Not yet ordered' : data[x].date_ordered;
-                sOut += '<tr id=\"' + data[x].order_id + '\"><td class=\"row_icon\"><img id=\"' + data[x].order_id + '\" class=\"row_icon\" src=\"resources/images/details_open.png\" /></td><td width=\"4%\">' + data[x].order_id + '</td><td width=\"4%\">' + data[x].status + '</td>';
-                sOut += '<td width=\"13%\">' + data[x].date_submitted + '</td><td width=\"66%\">' + data[x].notes + '</td>';
-                sOut += '<td width=\"13%\">' + dateOrdered + '</td></tr>';
-                sOut += '<tr class=\"details\" id=\"details_' + data[x].order_id + '\"><td colspan=\"5\"></td></tr>';
+                var dateOrdered = (data[x].date_ordered == "0000-00-00") ? "Not yet ordered" : data[x].date_ordered;
+                sOut += "<tr id=\"" + data[x].order_id + "\"><td class=\"row_icon\"><img id=\"" + data[x].order_id + "\" class=\"row_icon\" src=\"resources/images/details_open.png\" /></td><td width=\"4%\">" + data[x].order_id + "</td><td width=\"4%\">" + data[x].status + "</td>";
+                sOut += "<td width=\"13%\">" + data[x].date_submitted + "</td><td width=\"66%\">" + data[x].notes + "</td>";
+                sOut += "<td width=\"13%\">" + dateOrdered + "</td></tr>";
+                sOut += "<tr class=\"details\" id=\"details_" + data[x].order_id + "\"><td colspan=\"5\"></td></tr>";
                 fetchDetails(data[x].order_id);
             }
-            sOut += '</table>';
-            $('#search_results').html(sOut);
+            sOut += "</table>";
+            $("#search_results").html(sOut);
 
-            $('img.row_icon').click(function ()
+            $("img.row_icon").click(function ()
             {
-                var id = $(this).attr('id');
-                if (this.src.match('details_close'))
+                var id = $(this).attr("id");
+                if (this.src.match("details_close"))
                 {
                     /* This row is already open - close it */
-                    this.src = 'resources/images/details_open.png';
-                    $('tr#details_' + id).css('display', 'none');
+                    this.src = "resources/images/details_open.png";
+                    $("tr#details_" + id).css("display", "none");
                 }
                 else
                 {
                     /* Open this row */
-                    this.src = 'resources/images/details_close.png';
-                    $('tr#details_' + id).css('display', 'table-row');
+                    this.src = "resources/images/details_close.png";
+                    $("tr#details_" + id).css("display", "table-row");
                 }
             });
         });
     });
 
     /* open vendor links in new window
-  $('A[rel="external"]').click(function(){
-    window.open($(this).attr('href'));
+  $("A[rel="external"]").click(function(){
+    window.open($(this).attr("href"));
     return false;
   });
   */
@@ -827,13 +825,13 @@ function formatDetails(data)
  ********************************************************/
 function loadOrderAdmin()
 {
-    /* orderAdmin_hiddenRow.php hasn't returned the table with raw data (no data? errors?) */
-    if ($('#orderAdmin').length == 0) return;
+    /* orderAdmin_hiddenRow.php hasn"t returned the table with raw data (no data? errors?) */
+    if ($("#orderAdmin").length == 0) return;
 
     /*
-     * Initialse DataTables, with sorting on the 'status' column ascending
+     * Initialse DataTables, with sorting on the "status" column ascending
      */
-    var oTable = $('#orderAdmin').dataTable(
+    var oTable = $("#orderAdmin").dataTable(
     {
         bAutoWidth: false,
         bDestroy: true
@@ -844,30 +842,30 @@ function loadOrderAdmin()
      * Note that the indicator for showing which row is open is not controlled by DataTables,
      * rather it is done here
      */
-    $('td img', oTable.fnGetNodes()).each(function ()
+    $("td img", oTable.fnGetNodes()).each(function ()
     {
         $(this).click(function ()
         {
             var nTr = this.parentNode.parentNode;
-            var id = $(nTr).attr('id');
-            if (this.src.match('details_close'))
+            var id = $(nTr).attr("id");
+            if (this.src.match("details_close"))
             {
                 /* This row is already open - close it */
-                this.src = 'resources/images/details_open.png';
+                this.src = "resources/images/details_open.png";
                 oTable.fnClose(nTr);
             }
             else
             {
                 /* Open this row */
-                this.src = 'resources/images/details_close.png';
+                this.src = "resources/images/details_close.png";
 
                 /* Load data */
-                $.getJSON('orderDetail.php?id=' + id,
+                $.getJSON("orderDetail.php?id=" + id,
 
                 function (data)
                 {
-                    oTable.fnOpen(nTr, fnFormatDetails(data), 'details');
-                    $('input.editMyDetails', oTable.fnGetNodes()).editable('orderAdminUpdate.php', /* added oTable.fnGetNodes() */
+                    oTable.fnOpen(nTr, fnFormatDetails(data), "details");
+                    $("input.editMyDetails", oTable.fnGetNodes()).editable("orderAdminUpdate.php", /* added oTable.fnGetNodes() */
                     {
                         callback: function (value, settings)
                         {
@@ -877,16 +875,16 @@ function loadOrderAdmin()
                         submitdata: function (value, settings)
                         {
                             return {
-                                'id': $('input.editMyDetails').attr('item')
+                                "id": $("input.editMyDetails").attr("item")
                             };
                         },
 
-                        placeholder: '',
-                        type: 'text',
-                        indicator: 'Saving...',
-                        tooltip: 'Click to edit...',
-                        cssclass: 'editMeForm',
-                        onblur: 'submit'
+                        placeholder: "",
+                        type: "text",
+                        indicator: "Saving...",
+                        tooltip: "Click to edit...",
+                        cssclass: "editMeForm",
+                        onblur: "submit"
                     });
                 });
             }
@@ -894,7 +892,7 @@ function loadOrderAdmin()
     });
 
     /* Apply jEditable handlers to the table */
-    $('td.editMe', oTable.fnGetNodes()).editable('orderAdminUpdate.php',
+    $("td.editMe", oTable.fnGetNodes()).editable("orderAdminUpdate.php",
     {
         callback: function (value, settings)
         {
@@ -904,26 +902,26 @@ function loadOrderAdmin()
         submitdata: function (value, settings)
         {
             return {
-                'row_id': this.parentNode.getAttribute('id')
+                "row_id": this.parentNode.getAttribute("id")
             };
         },
 
-        placeholder: '',
-        type: 'text',
-        indicator: 'Saving...',
-        tooltip: 'Click to edit...',
-        cssclass: 'editMeForm',
-        onblur: 'submit'
+        placeholder: "",
+        type: "text",
+        indicator: "Saving...",
+        tooltip: "Click to edit...",
+        cssclass: "editMeForm",
+        onblur: "submit"
     });
 
     /* Apply jEditable handlers to Status fields using select dropdowns */
-    $('td.editMeSelect', oTable.fnGetNodes()).editable('orderAdminUpdate.php',
+    $("td.editMeSelect", oTable.fnGetNodes()).editable("orderAdminUpdate.php",
     {
-        loadurl: 'statusCodes.php',
+        loadurl: "statusCodes.php",
         loaddata: function (value, settings)
         {
             return {
-                'row_id': this.parentNode.getAttribute('id')
+                "row_id": this.parentNode.getAttribute("id")
             };
         },
         submitdata: function (value, settings)
@@ -932,21 +930,21 @@ function loadOrderAdmin()
              *  open confim dialog with callback
              */
             return {
-                'row_id': this.parentNode.getAttribute('id')
+                "row_id": this.parentNode.getAttribute("id")
             };
         },
 
-        placeholder: '',
-        type: 'select',
-        indicator: 'Saving...',
-        tooltip: 'Click to edit...',
-        cssclass: 'editMeForm',
-        submit: 'Ok'
+        placeholder: "",
+        type: "select",
+        indicator: "Saving...",
+        tooltip: "Click to edit...",
+        cssclass: "editMeForm",
+        submit: "Ok"
         //onblur  : "submit"
     });
 
     /* Apply jEditable handlers to the table */
-    $('td.editMeDate', oTable.fnGetNodes()).editable('orderAdminUpdate.php',
+    $("td.editMeDate", oTable.fnGetNodes()).editable("orderAdminUpdate.php",
     {
         callback: function (value, settings)
         {
@@ -956,16 +954,16 @@ function loadOrderAdmin()
         submitdata: function (value, settings)
         {
             return {
-                'row_id': this.parentNode.getAttribute('id')
+                "row_id": this.parentNode.getAttribute("id")
             };
         },
 
-        placeholder: '',
-        type: 'datepicker',
-        indicator: 'Saving...',
-        tooltip: 'Click to edit...',
-        cssclass: 'editMeForm',
-        onblur: 'submit'
+        placeholder: "",
+        type: "datepicker",
+        indicator: "Saving...",
+        tooltip: "Click to edit...",
+        cssclass: "editMeForm",
+        onblur: "submit"
     });
 
 }
@@ -979,49 +977,49 @@ function loadAdminSettings()
 {
 
     /* Apply jEditable handlers to the table */
-    $('.editMe').editable('AdminSettingsUpdate.php',
+    $(".editMe").editable("AdminSettingsUpdate.php",
     {
 
         submitdata: function (value, settings)
         {
             return {
-                'table': this.parentNode.getAttribute('class'),
-                'id': this.parentNode.getAttribute('id'),
-                'field': this.getAttribute('data-field')
+                "table": this.parentNode.getAttribute("class"),
+                "id": this.parentNode.getAttribute("id"),
+                "field": this.getAttribute("data-field")
             };
         },
 
-        placeholder: '',
-        type: 'text',
-        indicator: 'Saving...',
-        tooltip: 'Click to edit...',
-        cssclass: 'editMeForm',
-        onblur: 'submit'
+        placeholder: "",
+        type: "text",
+        indicator: "Saving...",
+        tooltip: "Click to edit...",
+        cssclass: "editMeForm",
+        onblur: "submit"
     });
 
     /* show/hide add form div */
-    $('a.add').click(function ()
+    $("a.add").click(function ()
     {
-        $('tr.add').slideToggle();
+        $("tr.add").slideToggle();
         return false;
     });
 
     /* submit add status code form */
-    $('form#add_status_code').find('input[name=submit]').click(function ()
+    $("form#add_status_code").find("input[name=submit]").click(function ()
     {
         $.ajax(
         {
-            type: 'POST',
-            url: 'AdminSettingsUpdate.php',
-            data: $('#add_status_code').serialize(),
-            dataType: 'json'
+            type: "POST",
+            url: "AdminSettingsUpdate.php",
+            data: $("#add_status_code").serialize(),
+            dataType: "json"
         })
         .done(function (response)
         {
-            $('div.add').slideToggle();
-            var backgroundColor = $('tr.status_codes > td').css('backgroundColor');
-            $('<tr class="status_codes" id="' + response.id + '"><td class="editMe" data-field="status_text" title="Click to edit...">' + response.status_text + '</td><td><a href="#" id="' + response.id + '" class="delete_status_code"><img src="resources/images/icons/delete.png" alt="Delete this item" title="Delete this item" /></a></td></tr>').prependTo('table.adminSettings > tbody');
-            $('tr#' + response.id + ' > td').css('background-color', '#33FF00').animate(
+            $("div.add").slideToggle();
+            var backgroundColor = $("tr.status_codes > td").css("backgroundColor");
+            $("<tr class=\"status_codes\" id=\"" + response.id + "\"><td class=\"editMe\" data-field=\"status_text\" title=\"Click to edit...\">" + response.status_text + "</td><td><a href=\"#\" id=\"" + response.id + "\" class=\"delete_status_code\"><img src=\"resources/images/icons/delete.png\" alt=\"Delete this item\" title=\"Delete this item\" /></a></td></tr>").prependTo("table.adminSettings > tbody");
+            $("tr#" + response.id + " > td").css("background-color", "#33FF00").animate(
             {
                 backgroundColor: backgroundColor
             }, 2500);
@@ -1030,42 +1028,42 @@ function loadAdminSettings()
         return false;
     });
     /* delete status code */
-    $('a.delete_status_code').click(function ()
+    $("a.delete_status_code").click(function ()
     {
         $.ajax(
         {
-            type: 'POST',
-            url: 'AdminSettingsUpdate.php',
+            type: "POST",
+            url: "AdminSettingsUpdate.php",
             data: {
-                action: 'delete_status_code',
-                id: $(this).attr('id')
+                action: "delete_status_code",
+                id: $(this).attr("id")
             },
-            dataType: 'json'
+            dataType: "json"
         })
         .done(function (response)
         {
-            $('tr#' + response.id).css('background-color', '#FBE3E4').hide('slow');
+            $("tr#" + response.id).css("background-color", "#FBE3E4").hide("slow");
         })
         .fail(function(){alert("Fail");});
         return false;
     });
     /* Add store */
-    $('form#add_store').find('input[name=submit]').click(function ()
+    $("form#add_store").find("input[name=submit]").click(function ()
     {
-        var dataForm = $('#add_store').serialize();
+        var dataForm = $("#add_store").serialize();
         $.ajax(
         {
-            type: 'POST',
-            url: 'AdminSettingsUpdate.php',
+            type: "POST",
+            url: "AdminSettingsUpdate.php",
             data: dataForm,
-            dataType: 'json'
+            dataType: "json"
         })
         .done(function (response)
         {
-            $('div.add').slideToggle();
-            var backgroundColor = $('tr.stores > td').css('backgroundColor');
-            $('<tr class="stores" id="' + response.id + '"><td class="editMe" data-field="add_store" title="Click to edit...">' + response.store_name + '</td><td><a href="#" id="' + response.id + '" class="delete_store"><img src="resources/images/icons/delete.png" alt="Delete this item" title="Delete this item" /></a></td></tr>').prependTo('table.adminSettings > tbody');
-            $('tr#' + response.id + ' > td').css('background-color', '#33FF00').animate(
+            $("div.add").slideToggle();
+            var backgroundColor = $("tr.stores > td").css("backgroundColor");
+            $("<tr class=\"stores\" id=\"" + response.id + "\"><td class=\"editMe\" data-field=\"add_store\" title=\"Click to edit...\">" + response.store_name + "</td><td><a href=\"#\" id=\"" + response.id + "\" class=\"delete_store\"><img src=\"resources/images/icons/delete.png\" alt=\"Delete this item\" title=\"Delete this item\" /></a></td></tr>").prependTo("table.adminSettings > tbody");
+            $("tr#" + response.id + " > td").css("background-color", "#33FF00").animate(
             {
                 backgroundColor: backgroundColor
             }, 2500);
@@ -1074,42 +1072,42 @@ function loadAdminSettings()
         return false;
     });
     /* Delete store */
-    $('a.delete_store').click(function ()
+    $("a.delete_store").click(function ()
     {
         $.ajax(
         {
-            type: 'POST',
-            url: 'AdminSettingsUpdate.php',
+            type: "POST",
+            url: "AdminSettingsUpdate.php",
             data: {
-                action: 'delete_store',
-                id: $(this).attr('id')
+                action: "delete_store",
+                id: $(this).attr("id")
             },
-            dataType: 'json'
+            dataType: "json"
         })
         .done(function (response)
         {
-            $('tr#' + response.id).css('background-color', '#FBE3E4').hide('slow');
+            $("tr#" + response.id).css("background-color", "#FBE3E4").hide("slow");
         })
         .fail(function(){alert("Fail");});
         return false;
     });
     /* Add email recipient */
-    $('form#add_email_recipient').find('input[name=submit]').click(function ()
+    $("form#add_email_recipient").find("input[name=submit]").click(function ()
     {
-        var dataForm = $('#add_email_recipient').serialize();
+        var dataForm = $("#add_email_recipient").serialize();
         $.ajax(
         {
-            type: 'POST',
-            url: 'AdminSettingsUpdate.php',
+            type: "POST",
+            url: "AdminSettingsUpdate.php",
             data: dataForm,
-            dataType: 'json'
+            dataType: "json"
         })
         .done(function (response)
         {
-            $('tr.add').slideToggle();
-            var backgroundColor = $('tr.email_recipients > td').css('backgroundColor');
-            $('<tr class="email_recipients" id="' + response.id + '"><td class="editMe" data-field="store_code" title="Click to edit...">' + response.store_code + '</td><td class="editMe" data-field="name" title="Click to edit...">' + response.name + '</td><td class="editMe" data-field="email_address" title="Click to edit...">' + response.email_address + '</td><td class="editMe" data-field="notice_type" title="Click to edit...">' + response.notice_type + '</td><td class="editMe" data-field="template" title="Click to edit...">' + response.template + '</td><td><a href="#" id="' + response.id + '" class="delete_email_recipient"><img src="resources/images/icons/delete.png" alt="Delete this item" title="Delete this item" /></a></td></tr>').prependTo('table.adminSettings > tbody');
-            $('tr#' + response.id + ' > td').css('background-color', '#33FF00').animate(
+            $("tr.add").slideToggle();
+            var backgroundColor = $("tr.email_recipients > td").css("backgroundColor");
+            $("<tr class=\"email_recipients\" id=\"" + response.id + "\"><td class=\"editMe\" data-field=\"store_code\" title=\"Click to edit...\">" + response.store_code + "</td><td class=\"editMe\" data-field=\"name\" title=\"Click to edit...\">" + response.name + "</td><td class=\"editMe\" data-field=\"email_address\" title=\"Click to edit...\">" + response.email_address + "</td><td class=\"editMe\" data-field=\"notice_type\" title=\"Click to edit...\">" + response.notice_type + "</td><td class=\"editMe\" data-field=\"template\" title=\"Click to edit...\">" + response.template + "</td><td><a href=\"#\" id=\"" + response.id + "\" class=\"delete_email_recipient\"><img src=\"resources/images/icons/delete.png\" alt=\"Delete this item\" title=\"Delete this item\" /></a></td></tr>").prependTo("table.adminSettings > tbody");
+            $("tr#" + response.id + " > td").css("background-color", "#33FF00").animate(
             {
                 backgroundColor: backgroundColor
             }, 2500);
@@ -1118,21 +1116,21 @@ function loadAdminSettings()
         return false;
     });
     /* Delete email recipient */
-    $('a.delete_email_recipient').click(function ()
+    $("a.delete_email_recipient").click(function ()
     {
         $.ajax(
         {
-            type: 'POST',
-            url: 'AdminSettingsUpdate.php',
+            type: "POST",
+            url: "AdminSettingsUpdate.php",
             data: {
-                action: 'delete_email_recipient',
-                id: $(this).attr('id')
+                action: "delete_email_recipient",
+                id: $(this).attr("id")
             },
-            dataType: 'json'
+            dataType: "json"
         })
         .done(function (response)
         {
-            $('tr#' + response.id).css('background-color', '#FBE3E4').hide('slow');
+            $("tr#" + response.id).css("background-color", "#FBE3E4").hide("slow");
         })
         .fail(function(){alert("Fail");});
         return false;
@@ -1146,10 +1144,10 @@ function loadAdminSettings()
  ********************************************************/
 function loadStatusCodeSelectTag()
 {
-    $('#filtering_status_codes').change(function ()
+    $("#filtering_status_codes").change(function ()
     {
-        $('.table').html(''); /* needs to empty the page before loading the new one to avoid some misbehaviour of the datatable plugin */
-        $('.table').load('orderAdmin_hiddenRow.php?sort_status=' + $(this).val(), loadOrderAdmin);
+        $(".table").html(""); /* needs to empty the page before loading the new one to avoid some misbehaviour of the datatable plugin */
+        $(".table").load("orderAdmin_hiddenRow.php?sort_status=" + $(this).val(), loadOrderAdmin);
         return false;
     });
 }
@@ -1355,7 +1353,7 @@ function getNewOrderNum() {
 
 function fetchDetails(order_id)
 {
-    $.getJSON('orderDetail.php',
+    $.getJSON("orderDetail.php",
     {
         id: order_id
     },
@@ -1363,40 +1361,40 @@ function fetchDetails(order_id)
     function (data)
     {
         var details = formatDetails(data);
-        $('tr#details_' + order_id + ' > td').html(details);
+        $("tr#details_" + order_id + " > td").html(details);
     });
 }
 
 /* Recalculate the total amount in special-order-form.html */
 function recalculateTotalAmount()
 {
-    var item1total = isNanMe(parseFloat($('#item_1_total').val()));
-    var item2total = isNanMe(parseFloat($('#item_2_total').val()));
-    var item3total = isNanMe(parseFloat($('#item_3_total').val()));
-    var item4total = isNanMe(parseFloat($('#item_4_total').val()));
-    var item5total = isNanMe(parseFloat($('#item_5_total').val()));
-    var shippingCharge = isNanMe(parseFloat($('#shipping_charge').val()));
+    var item1total = isNanMe(parseFloat($("#item_1_total").val()));
+    var item2total = isNanMe(parseFloat($("#item_2_total").val()));
+    var item3total = isNanMe(parseFloat($("#item_3_total").val()));
+    var item4total = isNanMe(parseFloat($("#item_4_total").val()));
+    var item5total = isNanMe(parseFloat($("#item_5_total").val()));
+    var shippingCharge = isNanMe(parseFloat($("#shipping_charge").val()));
     var subTotal = item1total + item2total + item3total + item4total + item5total;
 
-    var tax = roundMe(subTotal * $('span#taxRateLabel').text() / 100, 2);
-    $('#tax').val(tax);
+    var tax = roundMe(subTotal * $("span#taxRateLabel").text() / 100, 2);
+    $("#tax").val(tax);
     var totalAmount = roundMe(subTotal + tax + shippingCharge, 2);
 
-    $('#total_charge').val(totalAmount);
+    $("#total_charge").val(totalAmount);
 }
 
 /* Update Tax field label */
 function taxRate()
 {
-    var x = document.getElementById('store');
+    var x = document.getElementById("store");
     var tax_rate = x.options[x.selectedIndex].title;
-    $('span#taxRateLabel').text(tax_rate);
+    $("span#taxRateLabel").text(tax_rate);
 }
 
 /* Set the shipping method */
 function shipType(string)
 {
-    $('#ship_type').val(string);
+    $("#ship_type").val(string);
 }
 
 /* Math.round() and isNan() facility */
@@ -1419,17 +1417,17 @@ $.fn.clearForm = function ()
     {
         var type = this.type,
             tag = this.tagName.toLowerCase();
-        if (tag == 'form') return $(':input', this).clearForm();
-        if (type == 'text' || type == 'password' || tag == 'textarea') this.value = '';
-        else if (type == 'checkbox' || type == 'radio') this.checked = false;
-        else if (tag == 'select') this.selectedIndex = -1;
+        if (tag == "form") return $(":input", this).clearForm();
+        if (type == "text" || type == "password" || tag == "textarea") this.value = "";
+        else if (type == "checkbox" || type == "radio") this.checked = false;
+        else if (tag == "select") this.selectedIndex = -1;
     });
 };
 
 /* C  */
 function doNext(el)
 {
-    if (el.value.length < el.getAttribute('maxlength')) return;
+    if (el.value.length < el.getAttribute("maxlength")) return;
 
     var f = el.form;
     var els = f.elements;
