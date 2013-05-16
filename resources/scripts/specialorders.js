@@ -305,25 +305,6 @@ function loadPAOrderFormEventHandler()
         $("#shipping_zip").val($("#billing_zip").val());
     });
 
-    /* Toggle "in store payment" method radio button */
-    /*
-    $("input[name="new_bike_order"]").change(function ()
-    {
-        if ($("input[name="new_bike_order"]:checked"))
-        {
-            $("#in_store_purchase").attr("disabled", false);
-            $("div#card_details").css("display", "none");
-            $("div#receipt > span").text("Receipt #");
-            $("div#receipt").slideDown("fast").css("display", "block");
-        }
-        else
-        {
-            $("#in_store_purchase").prop("disabled", true).attr("checked", false);
-            $("div#receipt").slideUp("slow").css("display", "none");
-        }
-
-    });
-    */
 
     /*  Calculate item totals when item fields or store changes */
     $(document).on("change", "#store, .item1, .item2, .item3, .item4, .item5", function()
