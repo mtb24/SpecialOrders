@@ -448,7 +448,7 @@ function loadPAOrderFormEventHandler()
 function loadWarrantyFormEventHandler()
 {
 
-    $("a.newbikeOrder").click(function ()
+    $(document).on("click", "a.newbikeOrder", function ()
     {
         $("DIV.title > H5").text("New Bike Order");
         $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
