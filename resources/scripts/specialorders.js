@@ -9,7 +9,7 @@ $(document).ready(function ()
     loadAdminSettings();
 
     /* Parts & Accessories order page */
-    $("a#PAOrder").click(function ()
+    $(document).on("click", "a#PAOrder", function ()
     {
         $("DIV.title > H5").text("Parts & Accessories Order");
         $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
@@ -18,7 +18,7 @@ $(document).ready(function ()
         return false;
     });
     /* New Bike order page */
-    $("a.bikeOrder").click(function ()
+    $(document).on("click", "a.bikeOrder", function ()
     {
         $("DIV.title > H5").text("New Bike Order");
         $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
@@ -28,7 +28,7 @@ $(document).ready(function ()
     });
 
     /* Warranty order page */
-    $("a#warranty").click(function ()
+    $(document).on("click", "a#warranty", function ()
     {
         $("DIV.title > H5").text("Warranty Order");
         $("DIV.title").css("background", "url('resources/images/colors/blue/title.png') repeat-x scroll 0 0 #336699");
@@ -38,7 +38,7 @@ $(document).ready(function ()
     });
 
     /* show search form when Search Orders link is clicked */
-    $("a#checkStatus").click(function ()
+    $(document).on("click", "a#checkStatus", function ()
     {
         $("div.error").hide(); /* hide validation errors if coming from form page */
         $("DIV.title > H5").text("Search Orders");
@@ -49,7 +49,7 @@ $(document).ready(function ()
     });
 
     /* show Admin Panel when Admin link is clicked */
-    $("a#admin, a#showNewOrders").click(function ()
+    $(document).on("click", "a#admin, a#showNewOrders", function ()
     {
         $("div.error").hide(); /* hide validation errors if coming from form page */
         $("DIV.title > H5").text("Special Orders Admin");
@@ -61,7 +61,7 @@ $(document).ready(function ()
     });
 
     /* Show only new bike orders */
-    $("a#new_bike_order").click(function ()
+    $(document).on("click", "a#new_bike_order", function ()
     {
         $("div.error").hide(); /* hide validation errors if coming from form page */
         $(".table").html(""); /* Here, needs to empty the page before loading the new one to avoid some misbehaviour of the datatable plugin */
@@ -71,7 +71,7 @@ $(document).ready(function ()
     });
 
     /************  Settings Menu  ***************/
-    $("a.adminSettings").click(function ()
+    $(document).on("click", "a.adminSettings", function ()
     {
         $("div.error").hide(); /* hide validation errors if coming from form page */
         $(".table").html("");
@@ -80,14 +80,14 @@ $(document).ready(function ()
     });
 
     /* show the login dialog when Login is clicked */
-    $("a#admin-login").click(function ()
+    $(document).on("click", "a#admin-login", function ()
     {
         $("#dialog-login").dialog("open");
         return false;
     });
 
     /* show the change password dialog when Change Password is clicked */
-    $("#admin-change-password").click(function ()
+    $(document).on("click", "#admin-change-password", function ()
     {
         $("#dialog-change-password").dialog("open");
         return false;
