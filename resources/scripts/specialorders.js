@@ -503,15 +503,17 @@ function loadWarrantyFormEventHandler()
  ********************************************************/
 function loadOrderStatusSearchForm()
 {
+    
     $("#search_order_input_box").autocomplete(
     {
-        minLength: 1,
+	minLength: 1,
         delay: 0,
         source: function (request, response)
         {
-            if ($("#search_order_store").val() != "null")
+            var store = $("#search_order_store").val();
+	    if (store != "null")
             {
-                request.store = $("#search_order_store").val();
+                request.store = store;
             }
 
             $.getJSON(
@@ -551,7 +553,7 @@ function loadOrderStatusSearchForm()
                 sOut += "</table>";
                 $("#search_results").html(sOut);
 
-                $("img.row_icon").click(function ()
+                $(document).on("click", "img.row_icon", function()
                 {
                     var id = $(this).attr("id");
                     if (this.src.match("details_close"))
@@ -570,7 +572,7 @@ function loadOrderStatusSearchForm()
             }
         }
     });
-    $("#openOrderSearch").change(function ()
+    $(document).on("change", "#openOrderSearch", function()
     {
         $("#search_results").html("");
         $.getJSON("orderSearchbyStore.php",
@@ -597,7 +599,7 @@ function loadOrderStatusSearchForm()
             sOut += "</table>";
             $("#search_results").html(sOut);
 
-            $("img.row_icon").click(function ()
+            $(document).on("click", "img.row_icon", function()
             {
                 var id = $(this).attr("id");
                 if (this.src.match("details_close"))
