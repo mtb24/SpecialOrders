@@ -7,8 +7,8 @@
 /* array of characters to remove, since just escaping in PHP will confuse javascript later */
 function my_escape($str)
 {
-        $search  = array("\\\\'", '\\\\"', "\\\\", "\\\'", "\\'", '\\\"' , "\n" , "\r" , ";" , "," , '"' , '.' , '      ', '\t' );
-        $replace = array(""     , ''     , "/"   , ""    , ""   , 'in'   , "%0A", ""   , ""  , ""  , 'in', ''  , ''  , '' );
+        $search  = array("\\\\'", '\\\\"', "\\\\", "\\\'", "\\'", '\\\"' , "\n" , "\r" , ";" , "," , '"' , '.' , '      ', '\t', '%09', '%0A', '%3B' );
+        $replace = array(""     , ''     , "/"   , ""    , ""   , 'in'   , "%0A", ""   , ""  , ""  , 'in', ''  , ''      , ''  , ''   , ''   , '');
         return str_replace($search,$replace,$str);
 }
 
