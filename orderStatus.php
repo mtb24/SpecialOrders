@@ -27,6 +27,7 @@ $order        = new specialOrders();
 $customerList = array();
 $employeeList = array();
 
+// If searching by store
 if ( $searchStore !== false )
 {
     $customerList = $order->GetList( array(
@@ -52,10 +53,14 @@ if ( $searchStore !== false )
         ) 
     ), "status" );
 }
+// Seach by term
 else
 {
     $customerList = $order->GetList( array(
-         array(
+        array(
+              "\"$searchTerm\" IN (`item_1_rpro_num`,`item_2_rpro_num`,`item_3_rpro_num`,`item_4_rpro_num`,`item_5_rpro_num`) OR "
+        ),
+        array(
              "`specialordersid` = \"$searchTerm\" OR " 
         ),
         array(

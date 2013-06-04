@@ -12,7 +12,7 @@ include_once('stores.inc.php');
    <div class="fields">
       <div class="field">
 	 <div class="input" style="margin: 0px 0px 0px 20px; float: left; white-space: nowrap;">
-	    <input id="search_order_input_box" class="large" name="search_order" type="text" value="" size="45" placeholder="Search by Customer Last Name, or Order #" /><br /><br /><br />
+	    <input id="search_order_input_box" class="large" name="search_order" type="text" value="" size="45" placeholder="Search by Last Name, Order #, Rpro #" /><br /><br /><br />
 	    <strong>For QBP special orders submitted through MB.com- status can be checked on the "My Account" page on <a href="https://securecart.net/account.cfm?domain=mikesbikes%2Ecom&CFID=135221584&CFTOKEN=d1267f681c1f4e4b-4FB48FF1-5056-9212-1A823FE97806EE49" target="_new">MB.com</a></strong>
 	 </div>
 
