@@ -215,7 +215,6 @@ function loadBikeOrderFormEventHandler()
 {
 
     $.validity.start();
-    
     /* Toggle RA number field visibility
      * highlight Rpro number field and show required "Part Number 6" */
     $("input[name='orderType']").change(function ()
@@ -228,7 +227,7 @@ function loadBikeOrderFormEventHandler()
         }
         else
         {
-	    $("#RAnumber").slideUp("slow").css("display", "none");
+            $("#RAnumber").slideUp("slow").css("display", "none");
             //$("input.part6num").css("background-color", "");
             //$("th.part6num").html("Rpro #");
         }
@@ -238,8 +237,8 @@ function loadBikeOrderFormEventHandler()
     $(document).on("click", "#Bike_order_submit_button", function (e)
     {
         e.preventDefault();
-    	/* Validate form */
-    	$("#name_first, #name_last, #day_phone, #store, #employee").require();
+        /* Validate form */
+        $("#name_first, #name_last, #day_phone, #store, #employee").require();
             var result = $.validity.end();
             if ( result.valid ) {
                 /* data valid, so continue */
@@ -410,6 +409,7 @@ function loadPAOrderFormEventHandler()
         var result = $.validity.end();
         return result.valid;
     }
+
 
     /* Submit button (Validates data before continuing submission) */
     $(document).on("click", "#PA_order_submit_button", function (e)

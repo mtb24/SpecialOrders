@@ -23,19 +23,7 @@ if ( !isset( $_SESSION["isAdminLogged"] ) )
 		<link rel="stylesheet" type="text/css" href="resources/css/specialOrders.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="resources/css/jquery.validity.css" /> -->
 		<!-- scripts (jquery) -->
-		<script type="text/javascript" src="resources/scripts/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="resources/scripts/jquery.tools.min.js"></script>
 
-		<script type="text/javascript">
-			$(document).ready(function () {
-				style_path = "resources/css/colors";
-
-				$("#date-picker").datepicker();
-
-				$("#box-tabs, #box-left-tabs").tabs();
-
-			});
-		</script>
 	</head>
 	<body>
 		<!-- header -->
@@ -201,22 +189,47 @@ if ( $_SESSION["isAdminLogged"] === true ) {
 		</div>
       <!-- end dialogs -->
 	</body>
-		<!--[if IE]><script language="javascript" type="text/javascript" src="resources/scripts/excanvas.min.js"></script><![endif]-->
-		<script src="resources/scripts/jquery-ui-1.8.custom.min.js" type="text/javascript"></script>
-		<script src="resources/scripts/jquery.ui.selectmenu.js" type="text/javascript"></script>
-		<script src="resources/scripts/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
-		<script src="resources/scripts/jquery.dataTables.min.js" type="text/javascript"></script>
-		<script src="resources/scripts/jquery.jeditable.mini.js" type="text/javascript"></script>
-		<script src="resources/scripts/jquery.jeditable.datepicker.js" type="text/javascript"></script>
-		<script src="resources/scripts/jquery.formrestrict.js" type="text/javascript"></script>
-		<script src="resources/scripts/jquery.alphanumeric.js" type="text/javascript"></script>
-		<!-- scripts (template) -->
-		<script src="resources/scripts/smooth.js" type="text/javascript"></script>
-		<script src="resources/scripts/smooth.menu.js" type="text/javascript"></script>
-		<script src="resources/scripts/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
-		<!-- scripts (custom) -->
-		<script src="resources/scripts/creditcard.js" type="text/javascript"></script>
-		<script src="resources/scripts/specialorders.js" type="text/javascript"></script>
-		<!-- scripts (form validation) -->
-		<script src="resources/scripts/jQuery.validity.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="resources/scripts/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="resources/scripts/jquery.tools.min.js"></script>
+	<script src="resources/scripts/jquery-ui-1.8.custom.min.js" type="text/javascript"></script>
+	<script src="resources/scripts/jquery.ui.selectmenu.js" type="text/javascript"></script>
+	<script src="resources/scripts/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
+	<script src="resources/scripts/jquery.dataTables.min.js" type="text/javascript"></script>
+	<script src="resources/scripts/jquery.jeditable.mini.js" type="text/javascript"></script>
+	<script src="resources/scripts/jquery.jeditable.datepicker.js" type="text/javascript"></script>
+	<script src="resources/scripts/jquery.formrestrict.js" type="text/javascript"></script>
+	<script src="resources/scripts/jquery.alphanumeric.js" type="text/javascript"></script>
+	<!-- scripts (template) -->
+	<script src="resources/scripts/smooth.js" type="text/javascript"></script>
+	<script src="resources/scripts/smooth.menu.js" type="text/javascript"></script>
+	<script src="resources/scripts/tiny_mce/jquery.tinymce.js" type="text/javascript"></script>
+	<!-- scripts (custom) -->
+	<script src="resources/scripts/creditcard.js" type="text/javascript"></script>
+	<script type="text/javascript" src="resources/scripts/validity.js"></script>
+	<script src="resources/scripts/specialorders.js" type="text/javascript"></script>
+	<!-- scripts (form validation) -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			style_path = "resources/css/colors";
+
+			$("#date-picker").datepicker();
+
+			$("#box-tabs, #box-left-tabs").tabs();
+			
+			/* Remove any tab characters from inputs */
+			var input = document.getElementsByClassName(".alphanumeric_plus");
+			input.onChange = function(){
+			    input.value = input.value.replace(/\D,\W,\S/, '');
+			};
+		    
+		    /*
+			$(document).on("change", ".alphanumeric_plus", function(){
+			    var value = $(this).val();
+			    value = value.replace(/^\D,\W,\S/g, '');
+			    $(this).val(value);
+			});
+		    */
+		});
+	</script>
 </html>
