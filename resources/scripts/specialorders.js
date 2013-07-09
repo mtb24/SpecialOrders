@@ -237,10 +237,18 @@ function loadBikeOrderFormEventHandler()
     $(document).on("click", "#Bike_order_submit_button", function (e)
     {
         e.preventDefault();
+        /* remove unwanted characters from inputs */
+        $(".alphanumeric_plus").each(function(){
+            var input = $(this).val();
+            var screenedinput = input.replace(/[^0-9a-zA-Z\.#_-]/g, '');
+            $(this).val( screenedinput );
+        });
         /* Validate form */
         $("#name_first, #name_last, #day_phone, #store, #employee").require();
             var result = $.validity.end();
-            if ( result.valid ) {
+            //if ( result.valid )
+    	    if (true)
+    	    {
                 /* data valid, so continue */
                 $.ajax(
                 {
@@ -256,7 +264,7 @@ function loadBikeOrderFormEventHandler()
                     )
                 .fail(function(){alert("Fail");});
             } else {
-            alert ("Make sure required fields are completed!");
+                alert ("Make sure required fields are completed!");
             }
     });
 } // end loadBikeOrderFormEventHandler()
@@ -415,9 +423,16 @@ function loadPAOrderFormEventHandler()
     $(document).on("click", "#PA_order_submit_button", function (e)
     {
         e.preventDefault();
-    	/* Validate form */
-        if (FormInputsValid())
-        {
+        /* remove unwanted characters from inputs */
+        $(".alphanumeric_plus").each(function(){
+            var input = $(this).val();
+            var screenedinput = input.replace(/[^0-9a-zA-Z\.#_-]/g, '');
+            $(this).val( screenedinput );
+        });    	
+        /* Validate form */
+        //if (FormInputsValid())
+        if (true)
+    	{
             /* disable submit button */
             $("#PA_order_submit_button").prop("disabled", true);
 
@@ -471,9 +486,16 @@ function loadWarrantyFormEventHandler()
     $(document).on("click", "#warranty_order_submit_button", function (e)
     {
         e.preventDefault();
+        /* remove unwanted characters from inputs */
+        $(".alphanumeric_plus").each(function(){
+            var input = $(this).val();
+            var screenedinput = input.replace(/[^0-9a-zA-Z\.#_-]/g, '');
+            $(this).val( screenedinput );
+        });        
     	/* Validate form */
-        if (WarrantyFormInputsValid())
-        {
+        //if (WarrantyFormInputsValid())
+        if (true)
+    	{
             /* disable submit button */
             $("#warranty_order_submit_button").prop({disabled: true});
             $.ajax(
